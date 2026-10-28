@@ -4,7 +4,7 @@ Last updated: October 28, 2026
 
 Perfect Shapes is a puzzle game developed by **Ramedusa Studios**, intended for children aged 6 and older and adults. This policy explains how the current pre-release version handles information. It also distinguishes developer test features from features enabled in release builds.
 
-Privacy contact: **ramsessawyr@gmail.com**
+Privacy contact: **ramedusastudios.support@gmail.com**
 
 ## 1. Game data stored on your device
 
@@ -66,7 +66,7 @@ Enabling reporting or analytics in a public release would require an updated pol
 
 ## 6. Contacting us
 
-The **Contact Us** button opens an email application addressed to **ramsessawyr@gmail.com**. Sending an email is optional. If you contact us, we receive your email address and the information you include and use them to answer your inquiry or handle a privacy request. Our contact mailbox uses Google Gmail.
+The **Contact Us** button opens an email application addressed to **ramedusastudios.support@gmail.com**. Sending an email is optional. If you contact us, we receive your email address and the information you include and use them to answer your inquiry or handle a privacy request. Our contact mailbox uses Google Gmail.
 
 Please do not include passwords, payment details or unnecessary personal information. For children and players of unknown age, the Contact Us navigation asks for an adult's help through a short arithmetic gate. This gate is not identity verification or parental consent for advertising or data collection. The in-game Privacy Policy can be read without completing it.
 
@@ -88,7 +88,7 @@ Online requests use HTTPS. Local saves are kept in the operating system's app st
 
 The services described above may process information outside your country, including in the United States, according to their applicable terms and privacy policies. We use them for connectivity, advertising, developer crash diagnosis and support communications. We do not operate an account database or a marketplace for player information, and we do not sell your puzzle save files or support messages.
 
-Depending on your location, you may have rights to request access, correction or deletion of personal information, or to object to or restrict certain uses. Contact **ramsessawyr@gmail.com** for requests concerning information held by Ramedusa Studios. Google's and Microsoft's policies explain their own privacy controls. Where applicable, you may also contact your local data-protection authority.
+Depending on your location, you may have rights to request access, correction or deletion of personal information, or to object to or restrict certain uses. Contact **ramedusastudios.support@gmail.com** for requests concerning information held by Ramedusa Studios. Google's and Microsoft's policies explain their own privacy controls. Where applicable, you may also contact your local data-protection authority.
 
 ## 10. Changes and contact
 
@@ -96,4 +96,4 @@ We will update this policy when our data practices change and show the revised d
 
 **Publisher:** Ramedusa Studios  
 **Game:** Perfect Shapes  
-**Privacy and support email:** ramsessawyr@gmail.com
+**Privacy and support email:** ramedusastudios.support@gmail.com
