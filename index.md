@@ -1,6 +1,6 @@
 # Perfect Shapes — Privacy Policy
 
-Last updated: October 28, 2026
+Last updated: October 29, 2026
 
 Perfect Shapes is a puzzle game developed by **Ramedusa Studios**, intended for children aged 6 and older and adults. This policy explains how the current pre-release version handles information. It also distinguishes developer test features from features enabled in release builds.
 
@@ -31,7 +31,7 @@ The receiving service sees your IP address and ordinary network-request informat
 
 Perfect Shapes integrates Google AdMob through the Google Mobile Ads SDK. Advertising can include optional rewarded advertisements for an in-game benefit and interstitial advertisements at suitable transitions after completed puzzles. No real-world payment is required to receive an advertisement reward; coins are virtual game currency.
 
-**Current pre-release status:** the Android developer test build uses Google's demonstration ad units. Production ad requests are disabled in the current release configuration. The child-directed path described below is implemented for these test requests. Advertising availability depends on the SDK's privacy checks, configuration, network connection and ad supply; an internet connection does not guarantee an available advertisement.
+**Current pre-release status:** Android developer builds and explicitly marked internal-test builds use Google's demonstration ad units. Production ad requests are disabled in the current release configuration. The child-directed path described below is implemented for these test requests. Advertising availability depends on the SDK's privacy checks, configuration, network connection and ad supply; an internet connection does not guarantee an available advertisement.
 
 ### Children, teenagers and players of unknown age
 
@@ -52,17 +52,17 @@ For Google's data-handling information:
 - Google Privacy Policy: https://policies.google.com/privacy
 - Google Mobile Ads SDK data disclosure: https://developers.google.com/admob/android/privacy/play-data-disclosure
 
-## 5. Crash reporting in developer test builds
+## 5. Crash reporting
 
-Firebase Crashlytics is enabled in the configured Android developer test build to investigate crashes. It is disabled in the current release configuration. **Google Analytics for Firebase is not included**, and we do not send Firebase gameplay analytics events.
+Starting with version 1.0.1, Firebase Crashlytics is enabled in the configured Android Play release to diagnose crashes and improve reliability. Version 1.0.0 submitted before this update had release crash collection disabled. Developer test builds can also send crash reports. Google Analytics for Firebase is not included, and we do not send Firebase gameplay analytics events.
 
-When Crashlytics is enabled, Google processes crash traces, installation identifiers and technical information such as device model, operating-system and app version, crash time and native crash diagnostics. We add the displayed level number, Normal/Special mode, engine version and test-build channel to help reproduce a crash. We do not deliberately attach your age, age category, name, email, puzzle save files or a developer-assigned player ID. Crashlytics information should not be described as fully anonymous because installation identifiers are involved.
+Crashlytics automatically processes crash traces, application state at the time of a crash, installation and session identifiers, and technical information such as device model, operating-system and app version, crash time and native crash diagnostics. These reports help identify failures and measure how many installations are affected. We add the displayed level number, Normal/Special mode, engine version and build channel to help reproduce a crash. We do not deliberately attach your age, age category, name, email, puzzle save files or a developer-assigned player ID. Crashlytics reports are not fully anonymous because installation identifiers are involved. Crash collection is enabled automatically in these builds; the game currently has no separate switch to turn it off.
 
-Google documents a 90-day retention period for crash traces, extracted native-crash information and associated identifiers before beginning removal from live and backup systems. Raw native minidumps are held temporarily for processing.
+Google processes this information to provide crash reporting and management services for us. It documents a 90-day retention period for crash traces, extracted native-crash information and associated identifiers before beginning removal from live and backup systems. Raw native minidumps are held temporarily for processing.
 
 Firebase privacy information: https://firebase.google.com/support/privacy
 
-Enabling reporting or analytics in a public release would require an updated policy and corresponding data disclosures before that change is distributed.
+Any future addition of Firebase gameplay analytics would require a further policy and store disclosure update before distribution.
 
 ## 6. Contacting us
 
@@ -83,6 +83,10 @@ Local game data remains in app storage until it is cleared or removed. You can r
 We retain support correspondence while it is needed to respond and follow up, or where a legal obligation requires retention. You can contact us to request deletion; we will review and act on the request subject to applicable requirements and our ability to identify the information. Clearing app storage does not automatically erase information already held by Google, Microsoft or an email service. Their retention rules and available privacy controls also apply.
 
 Online requests use HTTPS. Local saves are kept in the operating system's app storage, with checksums and recovery copies to help detect interrupted writes. These safeguards are not a guarantee against every security incident or device failure.
+
+### Optional Google Play ratings
+
+Adult players may be offered Google's optional in-app review form after completing enough normal puzzles. Google Play handles any rating or review under its own terms and privacy policy. The game does not receive your rating, review text, or confirmation that you submitted a review. It stores only whether a review request has already been attempted, to avoid repeated requests. Reviews are not rewarded or required to continue playing.
 
 ## 9. Service providers and international processing
 
