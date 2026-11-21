@@ -1,115 +1,89 @@
 # Perfect Shapes — Privacy Policy
 
-Last updated: November 16, 2026
+Last updated: November 21, 2026
 
-Perfect Shapes is a puzzle game developed by **Ramedusa Studios**, intended for children aged 6 and older and adults. This policy explains how the current pre-release version handles information. It also distinguishes developer test features from features enabled in release builds.
+## About this policy
 
-Privacy contact: **ramedusastudios.support@gmail.com**
+Perfect Shapes is a puzzle game by Ramedusa Studios for children aged 6 and older and adults. This policy describes the Android game, including the account and purchase features introduced in our updated builds. Older installed versions may not include all these features. Feature availability depends on the installed version and release configuration. Privacy contact: ramedusastudios.support@gmail.com.
 
-## 1. Game data stored on your device
+## 1. Local game data
 
-The game stores puzzle progress, placed pieces and their rotations, completed levels, virtual coin balances, Special unlocks, collection progress, reward-claim records, tutorial status, advertising-break counters, and game preferences on your device. Recovery copies may be stored to restore an interrupted or damaged save.
+The game stores puzzle progress, stars, unfinished puzzles, coins, owned effects, reward claims, tutorial state, notification preferences, advertising counters and settings in app storage. Recovery copies help restore interrupted saves. Clearing app storage can remove these local records and account credentials. Operating-system backup and transfer settings may affect whether local data returns after reinstallation.
 
-These records let you continue an unfinished puzzle, keep earned content and avoid duplicate rewards. No account is required. We do not operate a cloud-save service, and the game's own code does not upload these save files to a developer-operated server. Device backup, transfer and restore behavior may depend on your operating system and device settings.
+## 2. Anonymous accounts and optional Google connection
 
-## 2. Age information
+Updated builds automatically create an anonymous Supabase account with a unique Player ID. You do not need to enter an email address, sign in with Google or pay to start playing. This account associates supported game records, rewards and purchases with the same player. Account session credentials are stored in the app's private storage to keep that session available. Anonymous does not mean unidentifiable: an account ID is a persistent identifier.
 
-When you first open the game, a neutral age screen asks your age and includes a “Prefer not to say” option. The number entered is used temporarily to select an on-device category: under 18, adult, or unknown. The game does not retain the age number or send it to advertising or crash-reporting services. Only the category is saved on your device.
+Connect with Google is optional. If you choose it, Google and Supabase process your Google account identifier and the basic profile information you authorize, which may include your name, email address and profile picture. We request basic sign-in scopes (openid, email and profile), not access to Gmail messages, contacts or Google Drive. We use the linked identity to associate and help recover your game account, not for advertising. Playing and purchasing do not require this connection. Account linking does not guarantee restoration of every local save; complete cross-device progress synchronization is not currently available.
 
-For advertising, all players under 18 and players whose age is unknown receive the same protective child-directed treatment. The advertising and consent services receive the relevant treatment flags, rather than the entered age. These services may store their own privacy-related settings on the device.
+## 3. Server game records and calendars
 
-## 3. Internet connection checks
+Supabase hosts our authentication and game database. Depending on the features used, records include Player ID, initial and recent app version, platform, build/test information, account activity timestamps, coin and skip-ticket balances and transactions, purchased passes and expiry dates, reward claims, owned effects, and supported level progress. These records support delivery, synchronization, fraud prevention, troubleshooting and prevention of duplicate rewards.
 
-An internet connection is required to play. The game sends small HTTPS requests to Google's `connectivitycheck.gstatic.com` and Microsoft's `www.msftconnecttest.com` to check internet availability.
+On the first connection in updated builds, an existing local save may be imported once, including coins, effects, progress and reward markers. This helps preserve earlier progress; it is not permission to repeatedly replace server purchase balances with local values. Some game state remains local.
 
-The receiving service sees your IP address and ordinary network-request information. The game does not attach puzzle saves, coins, age, reward history, email addresses or advertising identifiers to these checks. The providers handle connection logs under their own policies:
+For daily rewards and seasonal calendars, the app sends a randomly generated installation key and the device's configured time zone. The database stores a hash of that key, initial and registered calendar time zones, account association where available, and timestamps. Server time and the registered zone determine eligible days and help prevent device-clock changes from unlocking rewards early. Time-zone names do not establish a player's physical city. We do not request GPS or precise location. Calendar and account records do not currently have an automatic expiry. Optional reminders are scheduled on the device; turning them off does not disable server time checks.
 
-- Google: https://policies.google.com/privacy
-- Microsoft: https://privacy.microsoft.com/privacystatement
+## 4. Google Play purchases
 
-### Christmas calendar and notifications
+Google Play provides checkout and processes payment information. We do not receive your card number or banking credentials. To verify and deliver purchases, our server processes purchase tokens, token hashes, product and Google order identifiers, quantities, purchase/test/refund status, delivery and acknowledgement state, and related timestamps. Purchase tokens needed for server retries are stored encrypted; they are not simply discarded after hashing.
 
-Android builds with the live Christmas calendar automatically send the device's configured time zone (for example, Europe/Istanbul) and a random identifier generated by the game for that app installation to Supabase over HTTPS. The calendar uses the initially registered time zone and server time to open each puzzle on schedule and prevent early unlocks caused by changes to the device clock or time zone.
+We use transaction and reward ledgers to prevent duplicate grants and reconcile interrupted deliveries or changed purchase status. Some necessary purchase credentials and pending-operation records are also kept in private app storage for recovery. Pending payments do not grant paid items until Google confirms the purchase. Google Play handles its payment and refund processes under its own terms. Deleting a game account does not itself request a refund or delete your Google account.
 
-Supabase hosts the calendar database on behalf of Ramedusa Studios. The calendar table stores a hash of the installation identifier and the registered time zone. Supabase receives the connection's IP address and standard request metadata, which may appear in service logs. The calendar uses the Android time-zone setting and has no access to GPS coordinates. Calendar requests contain only the time zone and installation identifier as application data. We use the information for the calendar, with no advertising or analytics use.
+## 5. Age grouping and children's privacy
 
-Calendar records have no automatic expiry. You can contact us to request deletion, and we will review the request based on our ability to identify the corresponding record. Clearing the app's storage removes the local identifier and cached calendar time. The server record remains until it is deleted separately.
+The game asks for age through a neutral age screen, with an option not to say. The entered number is used temporarily to choose an on-device category: under 18, adult or unknown. The game does not retain that number or send it to the services described here. It saves the category locally and passes the relevant advertising treatment flags to the advertising and consent SDKs.
 
-Android schedules optional game reminders on your device. The Notifications setting controls those reminders. Calendar time checks are automatic and continue when reminders are off.
+Children and players of unknown age are not required to provide a name, email address or precise location to play. An anonymous account and the technical records described above can still be created. Under-18 and unknown players receive restricted advertising treatment, and optional gameplay Analytics is not enabled for them. The app does not request access to contacts, camera or microphone. A parent or guardian can contact us about access, correction or deletion. An arithmetic gate on some external navigation is a request for adult help, not identity verification or legally verified parental consent.
 
-Supabase privacy information: https://supabase.com/privacy
+## 6. Advertising and privacy choices
 
-## 4. Advertising and privacy choices
+The Android game integrates Google AdMob and Unity Ads through mediation. Depending on the release, it may show optional rewarded ads and interstitial ads at transitions after completed puzzles. Developer and internal-test configurations use test advertising where configured; production advertising is enabled only in the designated production configuration. Ad availability depends on privacy checks, connectivity and ad supply.
 
-Perfect Shapes integrates Google AdMob through the Google Mobile Ads SDK. Advertising can include optional rewarded advertisements for an in-game benefit and interstitial advertisements at suitable transitions after completed puzzles. No real-world payment is required to receive an advertisement reward; coins are virtual game currency.
+For under-18 and unknown players, the game requests child-directed treatment and G-rated content, disables publisher advertising personalization and marks the user as under the age of consent in Google's User Messaging Platform (UMP). The Android advertising-ID permission is removed for all players. Restricted ads still involve technical processing; non-personalized does not mean no data is processed. Advertising services may process IP addresses, approximate location inferred from IP, device and application information, ad interactions, diagnostics and permitted identifiers to deliver ads, measure operation and prevent fraud.
 
-**Current pre-release status:** Android developer builds and explicitly marked internal-test builds use Google's demonstration ad units. Production ad requests are disabled in the current release configuration. The child-directed path described below is implemented for these test requests. Advertising availability depends on the SDK's privacy checks, configuration, network connection and ad supply; an internet connection does not guarantee an available advertisement.
+For adults, UMP checks applicable requirements and offers privacy choices where required. Ads are not requested until the privacy check permits them. Where available, choices can be reviewed through Settings → Privacy Policy → Ad privacy choices. We do not deliberately give advertising services your entered age, Google profile, support emails or puzzle save files. Provider policies explain their own processing.
 
-### Children, teenagers and players of unknown age
+## 7. Crash reports and optional gameplay Analytics
 
-For all under-18 and unknown-age players, the game sets child-directed treatment, requests G-rated ad content and disables publisher advertising personalization before initializing advertisements. It marks these players as under the age of consent in Google's User Messaging Platform (UMP), so they are not asked to consent to personalized advertising. The Android advertising-ID permission is removed for every player. No additional mediation advertising networks are configured.
+Firebase Crashlytics is enabled in configured Android builds, including developer test builds, to diagnose crashes. It processes crash traces, installation and session identifiers, app state and technical information such as device model, operating system, app version and crash time. We add diagnostic context such as level, game mode, engine version and build channel. We do not deliberately attach Google profile data, email addresses, the entered age, full save files or Player ID to crash reports. These reports are not fully anonymous. The game currently has no separate crash-reporting switch. Firebase documents a 90-day retention period for Crashlytics crash traces, extracted minidump data and associated identifiers before removal begins from live and backup systems.
 
-These requests are intended for contextual, non-personalized advertising, rather than interest-based advertising or remarketing. Non-personalized does not mean that no information is processed: network and advertising services still need some technical information to deliver ads, prevent fraud and measure their operation.
+Google Analytics for Firebase is integrated but gameplay collection is currently disabled by our release configuration. Internal-test, debug and editor builds are blocked from sending gameplay Analytics. Crash reporting and essential server account/purchase records are separate from gameplay Analytics and can still operate.
 
-### Adult players
+If enabled in a future production configuration, optional gameplay Analytics will require an adult's opt-in in Settings → Privacy Policy. It is intended to measure tutorial completion, puzzle starts and outcomes, active playing time, hints, stars, artwork/cut revision, store visits, checkout outcomes, ad operation and virtual-currency activity. The app's gameplay event list excludes names, email addresses, Player IDs, raw purchase tokens and Google order IDs. Firebase may use its own app-instance and technical identifiers. Adults can switch optional gameplay Analytics off; doing so stops future optional collection, not deletion of information already processed. We will update disclosures when collection changes.
 
-For adult players, UMP checks the applicable privacy requirements and displays a privacy message when required. The game does not initialize or request ads until the privacy update completes without error and UMP reports that requests are permitted. Where applicable, adults can review their choices through **Settings → Privacy Policy → Ad privacy choices**. If the privacy check fails, ads remain unavailable.
+## 8. Connectivity, notifications, ratings and support
 
-### Information handled by Google
+Internet checks send small HTTPS requests to Google's connectivitycheck.gstatic.com and Microsoft's www.msftconnecttest.com. These services receive IP addresses and ordinary request metadata; the app does not attach game saves, coins, age or email to these checks. Other online providers also receive network and request metadata and may retain service logs.
 
-Depending on the SDK configuration and applicable restrictions, Google's advertising services may process IP addresses, approximate location derived from IP, app or ad interactions, diagnostics, and device or account identifiers. Child-directed treatment and the removal of the advertising-ID permission restrict advertising-identifier use; they do not eliminate all network or diagnostic processing. We do not give AdMob your entered age, puzzle save files or support emails.
+Optional reminders are local Android notifications. Google Play handles optional ratings and reviews; we do not receive your rating, review text or confirmation that you submitted a review. We store whether a review request was attempted to avoid repeated prompts.
 
-For Google's data-handling information:
+Contact buttons open an email app. If you send a message, we receive your email and its contents in our support mailbox, hosted by Gmail. Support information may include Player ID, a short support code, product name, app version and, when known and relevant, Google order ID. We use it to resolve the request. Do not send passwords, card information, service keys, refresh tokens or raw purchase tokens.
 
-- Google Privacy Policy: https://policies.google.com/privacy
-- Google Mobile Ads SDK data disclosure: https://developers.google.com/admob/android/privacy/play-data-disclosure
+## 9. Retention, deletion and your choices
 
-## 5. Crash reporting
+We retain server account, calendar, game and transaction information while needed to provide the game, resolve pending deliveries, support players and prevent duplicate or fraudulent rewards. There is currently no blanket automatic account or calendar deletion schedule. Necessary financial, security or legal records may be retained when a deletion request is fulfilled; other eligible records are deleted or de-identified. Backups and service logs can follow the provider's own retention cycles. We keep support correspondence as needed to handle and follow up on the request or meet legal obligations.
 
-Starting with version 1.0.1, Firebase Crashlytics is enabled in the configured Android Play release to diagnose crashes and improve reliability. Version 1.0.0 submitted before this update had release crash collection disabled. Developer test builds can also send crash reports. Google Analytics for Firebase is not included, and we do not send Firebase gameplay analytics events.
+To request account or data deletion, email ramedusastudios.support@gmail.com with the subject 'Perfect Shapes account/data deletion'. Include the Player ID copied from Settings if available. If Google is linked, sending from that email can help us verify the request. We may ask for proportionate information to locate and verify the account, without asking for passwords or payment credentials. Parents or guardians may request on a child's behalf. Requests are handled manually; there is not currently an instant in-game account deletion control.
 
-Crashlytics automatically processes crash traces, application state at the time of a crash, installation and session identifiers, and technical information such as device model, operating-system and app version, crash time and native crash diagnostics. These reports help identify failures and measure how many installations are affected. We add the displayed level number, Normal/Special mode, engine version and build channel to help reproduce a crash. We do not deliberately attach your age, age category, name, email, puzzle save files or a developer-assigned player ID. Crashlytics reports are not fully anonymous because installation identifiers are involved. Crash collection is enabled automatically in these builds; the game currently has no separate switch to turn it off.
+Uninstalling or clearing app storage removes local records but does not automatically delete server records or data held by Google, Microsoft or other providers. Contact us before clearing an anonymous installation if you need help identifying its account. Revoking Google's connection permission is separate from deleting the game account. Depending on your location, you may have rights to access, correct, delete, restrict or object to processing and to contact a data-protection authority. We respond subject to applicable law and reasonable verification.
 
-Google processes this information to provide crash reporting and management services for us. It documents a 90-day retention period for crash traces, extracted native-crash information and associated identifiers before beginning removal from live and backup systems. Raw native minidumps are held temporarily for processing.
+## 10. Providers, security and changes
 
-Firebase privacy information: https://firebase.google.com/support/privacy
+We use Supabase for accounts and game records; Google Play for purchases and reviews; Google AdMob, UMP and Unity for advertising; Firebase for crash reporting and configured optional Analytics; Google and Microsoft for connectivity checks; and Gmail for support. These providers may process information outside your country under their applicable terms and safeguards. We do not sell your Google profile, puzzle save files or support messages.
 
-Any future addition of Firebase gameplay analytics would require a further policy and store disclosure update before distribution.
+Online requests use HTTPS. Purchase credentials used for server reconciliation are encrypted at rest, and game server permissions restrict access. Local app storage, save recovery copies and transaction deduplication help protect records, but no system guarantees complete security or recovery.
 
-## 6. Contacting us
+This public site is a static GitHub Pages site. We have not added advertising, Analytics scripts, external fonts or tracking cookies to it. GitHub can process IP addresses and request logs to host and secure the site. Visiting Google Play or sending email involves those providers.
 
-The **Contact Us** button opens an email application addressed to **ramedusastudios.support@gmail.com**. Sending an email is optional. If you contact us, we receive your email address and the information you include and use them to answer your inquiry or handle a privacy request. Our contact mailbox uses Google Gmail.
+We will update the date and relevant disclosures when practices change. Publisher: Ramedusa Studios. Game: Perfect Shapes. Contact: ramedusastudios.support@gmail.com.
 
-Please do not include passwords, payment details or unnecessary personal information. For children and players of unknown age, the Contact Us navigation asks for an adult's help through a short arithmetic gate. This gate is not identity verification or parental consent for advertising or data collection. The in-game Privacy Policy can be read without completing it.
+## Provider information
 
-## 7. Children's privacy
-
-Children aged 6 and older are part of the intended audience. We do not require children to create an account, provide a name, supply an email address or share precise location to play. The game does not request access to contacts, camera or microphone. Local age grouping and child-directed advertising treatment are described above.
-
-Connectivity checks, Christmas calendar time verification and enabled child-directed ad services still involve the limited technical processing described in this policy. Parents or guardians can contact us with questions about their child's information or to request review or deletion of information they have provided to us. Please avoid sending additional sensitive information to identify a request.
-
-## 8. Retention, deletion and security
-
-Local game data remains in app storage until it is cleared or removed. You can remove it using Android's app-storage controls. Doing so also removes local progress, coins, unlocks, age category, preferences and recovery copies. Device backup or transfer features may affect whether information returns after reinstallation. We cannot recover a local save that we do not hold on our servers.
-
-We retain support correspondence while it is needed to respond and follow up, or where a legal obligation requires retention. You can contact us to request deletion; we will review and act on the request subject to applicable requirements and our ability to identify the information. Clearing app storage does not automatically erase information already held by Google, Microsoft or an email service. Their retention rules and available privacy controls also apply.
-
-Online requests use HTTPS. Local saves are kept in the operating system's app storage, with checksums and recovery copies to help detect interrupted writes. These safeguards are not a guarantee against every security incident or device failure.
-
-### Optional Google Play ratings
-
-Adult players may be offered Google's optional in-app review form after completing enough normal puzzles. Google Play handles any rating or review under its own terms and privacy policy. The game does not receive your rating, review text, or confirmation that you submitted a review. It stores only whether a review request has already been attempted, to avoid repeated requests. Reviews are not rewarded or required to continue playing.
-
-## 9. Service providers and international processing
-
-The services described above may process information outside your country, including in the United States, according to their applicable terms and privacy policies. We use them for connectivity, Christmas calendar hosting, advertising, developer crash diagnosis and support communications. We do not operate an account database or a marketplace for player information, and we do not sell your puzzle save files or support messages.
-
-Depending on your location, you may have rights to request access, correction or deletion of personal information, or to object to or restrict certain uses. Contact **ramedusastudios.support@gmail.com** for requests concerning information held by Ramedusa Studios. Google's and Microsoft's policies explain their own privacy controls. Where applicable, you may also contact your local data-protection authority.
-
-## 10. Changes and contact
-
-We will update this policy when our data practices change and show the revised date above. Changes to production advertising, child-directed services, crash collection or analytics must be reflected in the published policy and store disclosures.
-
-**Publisher:** Ramedusa Studios  
-**Game:** Perfect Shapes  
-**Privacy and support email:** ramedusastudios.support@gmail.com
+- Google privacy: https://policies.google.com/privacy
+- Google Mobile Ads SDK disclosure: https://developers.google.com/admob/android/privacy/play-data-disclosure
+- Unity privacy: https://unity.com/legal/privacy-policy
+- Firebase privacy and retention: https://firebase.google.com/support/privacy
+- Supabase privacy: https://supabase.com/privacy
+- Microsoft privacy: https://privacy.microsoft.com/privacystatement
+- GitHub privacy: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
