@@ -1,6 +1,6 @@
 # Perfect Shapes — Privacy Policy
 
-Last updated: November 21, 2026
+Last updated: November 22, 2026
 
 ## About this policy
 
@@ -64,11 +64,15 @@ Contact buttons open an email app. If you send a message, we receive your email 
 
 ## 9. Retention, deletion and your choices
 
-We retain server account, calendar, game and transaction information while needed to provide the game, resolve pending deliveries, support players and prevent duplicate or fraudulent rewards. There is currently no blanket automatic account or calendar deletion schedule. Necessary financial, security or legal records may be retained when a deletion request is fulfilled; other eligible records are deleted or de-identified. Backups and service logs can follow the provider's own retention cycles. We keep support correspondence as needed to handle and follow up on the request or meet legal obligations.
+We retain account and game information while needed to provide the game, resolve deliveries and prevent duplicate or fraudulent rewards. Weekly maintenance removes session diagnostics and save-operation retry receipts older than 30 days and checkout locks expired for more than a day. Current saves, balances, purchase and earned reward records are not erased by this routine maintenance. There is no blanket automatic expiry of inactive accounts.
 
-To request account or data deletion, email ramedusastudios.support@gmail.com with the subject 'Perfect Shapes account/data deletion'. Include the Player ID copied from Settings if available. If Google is linked, sending from that email can help us verify the request. We may ask for proportionate information to locate and verify the account, without asking for passwords or payment credentials. Parents or guardians may request on a child's behalf. Requests are handled manually; there is not currently an instant in-game account deletion control.
+Updated builds provide Settings → Request account deletion → Send request for both anonymous guests and Google-connected players. This records a request for the currently signed-in game account. Where the deletion processor has been deployed and enabled, the server processes queued requests and removes the Auth account, its Google link and associated game records, including progress, balances, benefits, supported saves, calendar associations and known purchase delivery records. Sending a request is not confirmation of completed deletion. Failed processing is retried; contacting support remains available. Once the server acknowledges a deletion request, updated builds leave that account, clear its local profile and recovery copies, and start a fresh separate guest game without waiting for server deletion to finish. If a request cannot be submitted, the existing game is kept. Other offline devices may retain their local copies until they reconnect and check deletion status. Older builds may require clearing app storage.
 
-Uninstalling or clearing app storage removes local records but does not automatically delete server records or data held by Google, Microsoft or other providers. Contact us before clearing an anonymous installation if you need help identifying its account. Revoking Google's connection permission is separate from deleting the game account. Depending on your location, you may have rights to access, correct, delete, restrict or object to processing and to contact a data-protection authority. We respond subject to applicable law and reasonable verification.
+A minimal SHA-256 purchase-token hash and Play account hash, with deletion time, may be retained to prevent previously used purchases being granted again. These hashes are not guaranteed anonymous and currently have no automatic expiry. A minimal request receipt and processing timestamps are retained; the old Player ID is removed from the completed request. Raw/encrypted purchase tokens, order IDs and game save contents are not kept in these retained anti-fraud records.
+
+If you cannot access the game, email ramedusastudios.support@gmail.com with the subject 'Perfect Shapes account/data deletion'. Include the Player ID if available. If Google is linked, sending from that email can help verify the request. Parents or guardians may request on a child's behalf. We may request proportionate ownership information, never passwords or card credentials. Email requests require manual verification and handling.
+
+Deleting the game account does not delete your Google account or automatically request a Google Play refund. Provider-held payment records, Firebase or advertising logs, support emails and backup retention cycles are separate from the game-account deletion transaction. We handle applicable provider deletion requests separately. Uninstalling or revoking Google's connection permission does not itself delete server records. Depending on your location, you may have rights to access, correct, delete, restrict or object to processing and to contact a data-protection authority. We respond subject to applicable law and reasonable verification.
 
 ## 10. Providers, security and changes
 
